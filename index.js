@@ -9,7 +9,7 @@ module.exports = {
 
   preprocessTree: function(type, tree) {
     if (type === 'js') {
-      tree = react(tree, { transform: { es6module: true } } );
+      tree = react(tree, { transform: { es6module: true }, extensions: ['js'] } );
     }
 
     return tree;
