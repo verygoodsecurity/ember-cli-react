@@ -2,7 +2,9 @@
   "name": "ember-cli-react",
   "version": "0.3.0",
   "description": "Use React component hierarchies in your Ember app.",
-  "keywords": ["ember-addon"],
+  "keywords": [
+    "ember-addon"
+  ],
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,10 +13,16 @@
     "build": "ember build",
     "start": "ember server",
     "test": "ember try:each",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "lint-staged": {
-    "*.{js,jsx}": ["prettier --write", "eslint --fix", "git add"],
+    "*.{js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
     "+(*.{json,css}|.prettierrc|.watchmanconfig)": [
       "prettier --write",
       "git add"
@@ -61,12 +69,14 @@
   "dependencies": {
     "broccoli-react": "github:verygoodsecurity/broccoli-react",
     "ember-cli-babel": "^6.0.0",
-    "rsvp": "^3.2.1"
+    "rsvp": "^3.2.1",
+    "snyk": "^1.316.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "versionCompatibility": {
       "ember": ">=1.13.0 <=2.13.0"
     }
-  }
+  },
+  "snyk": true
 }
